@@ -28,6 +28,11 @@ public class webcrawler {
         //Adding Starting URLs
         ListOfPendingURLs.add(URLString);
 
+        //Only crawling upto 100 url
+        while(!ListOfPendingURLs.isEmpty() && ListOfVisitedURLs.size() <= 100){
+
+        }
+
 
 
     }
