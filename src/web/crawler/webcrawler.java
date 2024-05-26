@@ -91,6 +91,7 @@ public class webcrawler {
             int current = 0;
             while (reader.hasNext()){
                 String line = reader.nextLine();
+                //Index of URL in reference to current reference
                 current = line.indexOf("http",current);
 
                 while (current>0){
