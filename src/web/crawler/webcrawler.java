@@ -30,7 +30,17 @@ public class webcrawler {
 
         //Only crawling upto 100 url
         while(!ListOfPendingURLs.isEmpty() && ListOfVisitedURLs.size() <= 100){
+            String urlString = ListOfPendingURLs.remove(0);
 
+            if (!ListOfVisitedURLs.contains(urlString)){
+                ListOfVisitedURLs.add(urlString);
+
+                System.out.println("Crawl: " + urlString);
+
+                for (String s: getSubString(urlString)){
+                    System.out.println(s);
+                }
+            }
         }
 
 
