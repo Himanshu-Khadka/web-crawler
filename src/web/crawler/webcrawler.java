@@ -1,5 +1,40 @@
-package web.crawler;
+/**
+ * A simple web crawler that extracts and prints URLs from a given starting point.
+ *
+ * @author Himanshu Khadka
+ * @version 1.0
+ *
+ * This program prompts the user to enter a URL, and then crawls up to 100 URLs
+ * starting from the given URL. It prints each URL it visits and extracts additional
+ * URLs from the HTML content of each visited page.
+ *
+ * Classes:
+ * - webcrawler: Contains the main method, crawl method, and getSubString method.
+ *
+ * Methods:
+ * - public static void main(String[] args): Prompts the user for a URL and starts the crawling process.
+ * - public static void crawl(String URLString): Manages the crawling process, tracks pending and visited URLs.
+ * - public static ArrayList<String> getSubString(String URLString): Extracts and returns a list of URLs found in the HTML content.
+ *
+ * Usage:
+ * 1. Run the program.
+ * 2. Enter a starting URL when prompted.
+ * 3. The program will print the URLs it crawls and the URLs found on each page.
+ *
+ * Example:
+ * Enter the URL:
+ * https://example.com
+ * Crawl: https://example.com
+ * https://example.com/page1
+ * https://example.com/page2
+ * ...
+ *
+ * Notes:
+ * - This program uses simple string matching to find URLs within the HTML content.
+ * - It is intended as a basic demonstration and may require enhancements for robust real-world use.
+ */
 
+package web.crawler;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -8,6 +43,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class webcrawler {
+
     public static void main(String[] args) {
         //Scanner object
         Scanner input = new Scanner(System.in);
@@ -17,7 +53,6 @@ public class webcrawler {
         //Calling crawl class
         crawl(url);
     }
-
 
     //Crawl method
     public static void crawl(String URLString){
